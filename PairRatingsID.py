@@ -2,8 +2,14 @@ import streamlit as st
 import pandas as pd
 import os
 
-INPUT_FILE = r"C:\Users\RichardBrown\Downloads\ErateNCESmpnet_best_match_for_each_A_ID_LT95.csv"
-OUTPUT_FILE = r"C:\Users\RichardBrown\Downloads\ErateNCESmpnet_rater_judgments_ID_LT95.csv"
+from pathlib import Path
+
+APP_DIR = Path(__file__).parent
+INPUT_FILE = APP_DIR / "ErateNCESmpnet_best_match_for_each_A_WA.csv"
+
+df = pd.read_csv(INPUT_FILE)
+
+OUTPUT_FILE = "ErateNCESmpnet_rater_judgments_ID_LT95.csv"
 
 st.title("A–B Statement Match Review")
 
