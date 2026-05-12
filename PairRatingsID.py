@@ -71,3 +71,14 @@ if st.button("Submit judgment"):
 
     st.success("Judgment saved. Refreshing to next pair...")
     st.rerun()
+
+if os.path.exists(OUTPUT_FILE):
+    ratings_df = pd.read_csv(OUTPUT_FILE)
+
+    st.download_button(
+        label="Download ratings CSV",
+        data=ratings_df.to_csv(index=False),
+        file_name="ErateNCESmpnet_rater_judgments_WA.csv",
+        mime="text/csv"
+    )
+    
