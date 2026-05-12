@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 
 APP_DIR = Path(__file__).parent
-INPUT_FILE = APP_DIR / "ErateNCESmpnet_best_match_for_each_A_WA.csv"
+INPUT_FILE = APP_DIR / "ErateNCESmpnet_best_match_for_each_A_ID_LT95.csv"
 
 df = pd.read_csv(INPUT_FILE)
 
